@@ -21,18 +21,10 @@ const Question = ({
 }) => {
   const [selected, setSelected] = useState();
   const [error, setError] = useState(false);
-  console.log(correct, "correct");
   const navigate = useNavigate();
-  console.log(options, "options");
-  console.log(selected, "selected");
-  console.log(questions, "questions");
-  console.log(currQues, questions?.length, "currQues currQuescurrQues");
-  console.log(questions?.length, "number of questions");
+
   const [progress, setProgress] = React.useState(0);
   const realCiurrentquestion = currQues + 1;
-
-  console.log(realCiurrentquestion, "realCiurrentquestion");
-  console.log(progress, "progress");
 
   const handleSelect = (i) => {
     if (selected.desc == i.desc && selected.desc == correct) return "select";

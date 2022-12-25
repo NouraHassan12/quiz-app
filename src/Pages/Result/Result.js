@@ -5,16 +5,10 @@ import scoreList from "../../Data/scoreList";
 import { fetchScores } from "../../Redux/scoreList/action";
 import { useDispatch, useSelector } from "react-redux";
 const Result = ({ score, questions }) => {
-  console.log(questions, "questions");
-  console.log(scoreList, "scoreList");
   const dispatch = useDispatch();
   const all_scores = useSelector((state) => state.scoresList);
-  console.log(all_scores?.scoresList, "all_scoresSelectoor");
   const _scores = scoreList || all_scores?.scoresList;
   const questions_Number = questions.length;
-  console.log(questions_Number, "questions_Number");
-  console.log(score, "score");
-  console.log(_scores, "_scores");
   useEffect(() => {
     dispatch(fetchScores());
   }, []);
@@ -29,8 +23,6 @@ const Result = ({ score, questions }) => {
 
   const attchived_rank = (count / _scores.length) * 100;
 
-  console.log(attchived_rank, "attchived_rank");
-  console.log(count, "countcount");
   return (
     <div className="result">
       <span>Final Score :{Math.round(attchived_score)}%</span>
